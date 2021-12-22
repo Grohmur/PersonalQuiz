@@ -8,8 +8,6 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    
-    // 4. Избавится от кнопки возврата назад на экран результатов
 
     @IBOutlet weak var animalTipeLabel: UILabel!
     @IBOutlet weak var animalTipeDescription: UILabel!
@@ -18,6 +16,7 @@ class ResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: false)
         let result = choosingResult(answers: readyAnswers)
         animalTipeLabel.text = "Вы - \(result.rawValue)!"
         animalTipeDescription.text = result.definition
